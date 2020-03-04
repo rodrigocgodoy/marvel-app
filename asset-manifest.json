@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/softplan-desafio/static/js/main.6081c646.chunk.js",
+    "main.js.map": "/softplan-desafio/static/js/main.6081c646.chunk.js.map",
+    "runtime-main.js": "/softplan-desafio/static/js/runtime-main.6d6f5853.js",
+    "runtime-main.js.map": "/softplan-desafio/static/js/runtime-main.6d6f5853.js.map",
+    "static/js/2.15c07c9d.chunk.js": "/softplan-desafio/static/js/2.15c07c9d.chunk.js",
+    "static/js/2.15c07c9d.chunk.js.map": "/softplan-desafio/static/js/2.15c07c9d.chunk.js.map",
+    "index.html": "/softplan-desafio/index.html",
+    "precache-manifest.375e9a4cd00a7a7e8fc11b657139006a.js": "/softplan-desafio/precache-manifest.375e9a4cd00a7a7e8fc11b657139006a.js",
+    "service-worker.js": "/softplan-desafio/service-worker.js",
+    "static/js/2.15c07c9d.chunk.js.LICENSE.txt": "/softplan-desafio/static/js/2.15c07c9d.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/softplan-desafio/static/media/logo.2f599a7d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d6f5853.js",
+    "static/js/2.15c07c9d.chunk.js",
+    "static/js/main.6081c646.chunk.js"
+  ]
+}
