@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { FaSearch, IoMdClose } from 'react-icons/all';
 
-import { Container } from './styles';
-
 import logo from '../../assets/logo.png';
+import { Container } from './styles';
 
 export default function Header() {
   const [search, setSearch] = useState('');

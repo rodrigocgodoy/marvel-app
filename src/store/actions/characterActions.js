@@ -1,6 +1,6 @@
-const incrementUm = () => {
+const getApiMarvel = () => {
   return {
-    type: 'INCREMENT_UM'
+    type: 'GET_API_MARVEL'
   };
 };
 
@@ -23,7 +23,7 @@ const decrementDez = () => {
 };
 
 export default {
-  incrementUm,
+  getApiMarvel,
   decrementUm,
   incrementDez,
   decrementDez

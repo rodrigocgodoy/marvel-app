@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
   }
   body, input, button {
     font-family: Arial, Helvetica, sans-serif;
