@@ -1,7 +1,7 @@
 import api from '../../services/api';
 
 const INITIAL_STATE = {
-  data: {},
+  data: [],
   isError: false,
   isLoading: false,
   dataOpitions: {
@@ -10,14 +10,14 @@ const INITIAL_STATE = {
   }
 };
 
-const counter = (state = INITIAL_STATE, action) => {
+const character = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GET_API_MARVEL':
       state.isLoading = true;
       api.characters
         .findAll(state.dataOpitions.findTotal, state.dataOpitions.offset)
         .then(res => {
-          console.log(res.data);
+          // console.log(res.data);
           state.data = res.data;
           state.isLoading = false;
         })
@@ -37,4 +37,4 @@ const counter = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default counter;
+export default character;

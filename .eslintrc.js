@@ -27,11 +27,12 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-        // example configuration
         newlinesBetween: 'always',
         groups: ['/ˆreact/', 'module', ['parent', 'sibling', 'index']],
         alphabetize: { order: 'asc', ignoreCase: true }
       }
-    ]
+    ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   }
 };

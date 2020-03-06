@@ -1,25 +1,33 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, shallowEqual } from 'react-redux';
+import React from 'react';
+// import { useSelector, shallowEqual } from 'react-redux';
 
 import { Container } from './styles';
 
-export default function Card({ image, name }) {
+export default function Card({ data }) {
   // const dataMarvel = useSelector(state => state.character, shallowEqual);
+  console.log(data);
 
   return (
-    <Container>
+    <Container
+    // id={data.id}
+    // onClick={() => {
+    //   console.log(id);
+    // }}
+    >
       <div className="imgContainer">
-        <img src={image} alt={name} />
+        <img
+          src={`${data.thumbnail.path}${data.thumbnail.extension}`}
+          alt={data.name}
+        />
       </div>
       <div className="nameContainer">
-        <span>{name}</span>
+        <span>{data.name}</span>
       </div>
     </Container>
   );
 }
 
 Card.prototype = {
-  image: PropTypes.string,
-  name: PropTypes.string
+  data: PropTypes.object
 };
