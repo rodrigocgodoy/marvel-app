@@ -1,18 +1,33 @@
+import api from '../../services/api';
+
 const getApiMarvel = () => {
+  // const teste = api.characters
+  //   .findAll(state.dataOpitions.findTotal, state.dataOpitions.offset)
+  //   .then(res => {
+  //     state.isLoading = true;
+  //     data = res.data;
+  //     state.isLoading = false;
+  //   })
+  //   .fail(err => {
+  //     state.isLoading = true;
+  //     state.isError = err;
+  //     state.isLoading = false;
+  //   });
   return {
     type: 'GET_API_MARVEL'
+    // payload: teste
   };
 };
 
-const decrementUm = () => {
+const setFindTotal = () => {
   return {
-    type: 'DECREMENT_UM'
+    type: 'SET_FIND_TOTAL'
   };
 };
 
-const incrementDez = () => {
+const getData = () => {
   return {
-    type: 'INCREMENT_DEZ'
+    type: 'GET_DATA'
   };
 };
 
@@ -24,7 +39,7 @@ const decrementDez = () => {
 
 export default {
   getApiMarvel,
-  decrementUm,
-  incrementDez,
+  setFindTotal,
+  getData,
   decrementDez
 };

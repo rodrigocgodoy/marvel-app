@@ -14,7 +14,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
   plugins: ['react', 'import-helpers', 'prettier'],
@@ -31,8 +31,8 @@ module.exports = {
         groups: ['/ˆreact/', 'module', ['parent', 'sibling', 'index']],
         alphabetize: { order: 'asc', ignoreCase: true }
       }
-    ],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    ]
+    // 'react-hooks/rules-of-hooks': 'warn',
+    // 'react-hooks/exhaustive-deps': 'warn'
   }
 };

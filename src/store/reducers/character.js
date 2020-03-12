@@ -13,22 +13,24 @@ const INITIAL_STATE = {
 const character = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GET_API_MARVEL':
-      state.isLoading = true;
       api.characters
         .findAll(state.dataOpitions.findTotal, state.dataOpitions.offset)
         .then(res => {
-          // console.log(res.data);
+          state.isLoading = true;
           state.data = res.data;
           state.isLoading = false;
         })
         .fail(err => {
+          state.isLoading = true;
           state.isError = err;
           state.isLoading = false;
         });
+      // return { ...state, data: [...state.data, action.payload] };
       return state;
-    case 'DECREMENT_UM':
+    case 'SET_FIND_TOTAL':
+      state.dataOpitions.findTotal = 300;
       return state;
-    case 'INCREMENT_DEZ':
+    case 'GET_DATA':
       return state;
     case 'DECREMENT_DEZ':
       return state;

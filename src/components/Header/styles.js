@@ -13,6 +13,10 @@ export const Container = styled.div`
   padding: 0 30px;
   font-size: 20px;
 
+  /* @media (max-width: 480px) {
+    height: 30px;
+  } */
+
   img {
     height: 100%;
   }

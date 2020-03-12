@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { FaSearch, IoMdClose } from 'react-icons/all';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 import logo from '../../assets/logo.png';
-import allActions from '../../store/actions';
+// import allActions from '../../store/actions';
 import { Container } from './styles';
 
 export default function Header() {
   const [search, setSearch] = useState('');
   const [searchOn, setSearchOn] = useState(false);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    function getDataMarvel() {
-      dispatch(allActions.characterActions.getApiMarvel());
-      // dispatch({ type: 'GET_API_MARVEL' });
-    }
-    getDataMarvel();
-  });
+  // useEffect(() => {
+  //   function getDataMarvel() {
+  //     dispatch(allActions.characterActions.getApiMarvel());
+  //     // dispatch({ type: 'GET_API_MARVEL' });
+  //   }
+  //   getDataMarvel();
+  // });
 
   const handleSearch = () => {
     setSearchOn(!searchOn);
