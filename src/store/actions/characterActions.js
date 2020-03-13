@@ -11,7 +11,15 @@ const requestSearchMarvel = name => {
   };
 };
 
+const requestGetMarvelId = id => {
+  return {
+    type: 'REQUEST_GET_MARVEL_ID',
+    payload: { id }
+  };
+};
+
 export default {
   requestGetMarvel,
-  requestSearchMarvel
+  requestSearchMarvel,
+  requestGetMarvelId
 };

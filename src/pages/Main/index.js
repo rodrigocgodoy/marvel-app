@@ -26,7 +26,7 @@ export default function Main() {
 
   return (
     <>
-      <Header />
+      <Header showSearch />
       <Container>
         {data?.loading && (
           <>

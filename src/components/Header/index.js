@@ -7,7 +7,7 @@ import logo from '../../assets/logo.png';
 import allActions from '../../store/actions';
 import { Container } from './styles';
 
-export default function Header() {
+export default function Header({ showSearch }) {
   const [search, setSearch] = useState('');
   const [searchOn, setSearchOn] = useState(false);
 
@@ -19,33 +19,37 @@ export default function Header() {
 
   useEffect(() => {
     const getDataMarvel = () => {
-      dispatch(allActions.characterActions.requestSearchMarvel(search));
+      search === ''
+        ? dispatch(allActions.characterActions.requestGetMarvel())
+        : dispatch(allActions.characterActions.requestSearchMarvel(search));
     };
     getDataMarvel();
+    console.log(search);
   }, [search]);
 
   return (
     <Container>
       <img src={logo} alt="Marvel App" />
-      {!searchOn ? (
-        <div className="containerSeacrhClosed">
-          <input
-            type="text"
-            onChange={e => setSearch(e.target.value)}
-            value={search}
-          />
-          <FaSearch onClick={() => handleSearch()} />
-        </div>
-      ) : (
-        <div className="containerSeacrhOn">
-          <input
-            type="text"
-            onChange={e => setSearch(e.target.value)}
-            value={search}
-          />
-          <IoMdClose onClick={() => handleSearch()} />
-        </div>
-      )}
+      {showSearch &&
+        (!searchOn ? (
+          <div className="containerSeacrhClosed">
+            <input
+              type="text"
+              onChange={e => setSearch(e.target.value)}
+              value={search}
+            />
+            <FaSearch onClick={() => handleSearch()} />
+          </div>
+        ) : (
+          <div className="containerSeacrhOn">
+            <input
+              type="text"
+              onChange={e => setSearch(e.target.value)}
+              value={search}
+            />
+            <IoMdClose onClick={() => handleSearch()} />
+          </div>
+        ))}
     </Container>
   );
 }

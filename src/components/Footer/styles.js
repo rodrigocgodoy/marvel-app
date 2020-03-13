@@ -16,6 +16,10 @@ export const Container = styled.div`
     justify-content: center;
     height: 100%;
 
+    span {
+      color: #fff;
+    }
+
     a {
       color: #fff;
     }

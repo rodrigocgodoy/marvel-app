@@ -18,6 +18,15 @@ const GlobalStyle = createGlobalStyle`
   body, input, button {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  p, span {
+    color: #202020;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: #202020;
+  }
 `;
 
 export default GlobalStyle;

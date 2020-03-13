@@ -1,5 +1,7 @@
 const INITIAL_STATE = {
   data: [],
+  dataUser: [],
+  dataSeries: [],
   dataOpitions: {
     findTotal: 20,
     offset: 0
@@ -23,6 +25,27 @@ const character = async (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
+        dataUser: [],
+        dataSeries: [],
+        loading: false,
+        error: true
+      };
+    case 'REQUEST_GET_MARVEL_ID':
+      return { ...state, loading: true };
+    case 'SUCCESS_GET_MARVEL_ID':
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        dataUser: action.payload.dataUser,
+        dataSeries: action.payload.dataSeries
+      };
+    case 'FAILURE_GET_MARVEL_ID':
+      return {
+        ...state,
+        data: [],
+        dataUser: [],
+        dataSeries: [],
         loading: false,
         error: true
       };
@@ -39,6 +62,8 @@ const character = async (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
+        dataUser: [],
+        dataSeries: [],
         loading: false,
         error: true
       };
