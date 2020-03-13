@@ -1,39 +1,47 @@
-import api from '../../services/api';
-
 const INITIAL_STATE = {
   data: [],
-  isError: false,
-  isLoading: false,
   dataOpitions: {
-    findTotal: 100,
-    offset: 100
-  }
+    findTotal: 20,
+    offset: 0
+  },
+  error: false,
+  loading: false
 };
 
-const character = (state = INITIAL_STATE, action) => {
+const character = async (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'GET_API_MARVEL':
-      api.characters
-        .findAll(state.dataOpitions.findTotal, state.dataOpitions.offset)
-        .then(res => {
-          state.isLoading = true;
-          state.data = res.data;
-          state.isLoading = false;
-        })
-        .fail(err => {
-          state.isLoading = true;
-          state.isError = err;
-          state.isLoading = false;
-        });
-      // return { ...state, data: [...state.data, action.payload] };
-      return state;
-    case 'SET_FIND_TOTAL':
-      state.dataOpitions.findTotal = 300;
-      return state;
-    case 'GET_DATA':
-      return state;
-    case 'DECREMENT_DEZ':
-      return state;
+    case 'REQUEST_GET_MARVEL':
+      return { ...state, loading: true };
+    case 'SUCCESS_GET_MARVEL':
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        data: action.payload.data
+      };
+    case 'FAILURE_GET_MARVEL':
+      return {
+        ...state,
+        data: [],
+        loading: false,
+        error: true
+      };
+    case 'REQUEST_SEARCH_MARVEL':
+      return { ...state, loading: true };
+    case 'SUCCESS_SEARCH_MARVEL':
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        data: action.payload.data
+      };
+    case 'FAILURE_SEARCH_MARVEL':
+      return {
+        ...state,
+        data: [],
+        loading: false,
+        error: true
+      };
     default:
       return state;
   }

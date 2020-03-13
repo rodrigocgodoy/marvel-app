@@ -1,49 +1,47 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Card from '../../components/Card';
+import CardLoading from '../../components/CardLoading';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import allActions from '../../store/actions';
 import { Container } from './styles';
 
 export default function Main() {
-  // const dataMarvel = useSelector(state => state.character);
+  const [data, setData] = useState({});
   const { dataMarvel } = useSelector(state => ({
     dataMarvel: state.character
   }));
+  dataMarvel.then(response => setData(response));
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getDataMarvel = () => {
-      dispatch(allActions.characterActions.getApiMarvel());
+      dispatch(allActions.characterActions.requestGetMarvel());
     };
     getDataMarvel();
-    console.log(Object.values(dataMarvel)[2]);
   }, []);
-
-  console.info(Object.values(dataMarvel)[3].findTotal);
 
   return (
     <>
       <Header />
       <Container>
-        {Object.values(dataMarvel)[2] ? (
-          <h1>isLoading</h1>
-        ) : (
-          Object.values(dataMarvel)[0].map(dataMap => {
-            return <Card data={dataMap} />;
-          })
+        {data?.loading && (
+          <>
+            <CardLoading /> <CardLoading /> <CardLoading />
+            <CardLoading /> <CardLoading /> <CardLoading />
+            <CardLoading /> <CardLoading /> <CardLoading />
+            <CardLoading /> <CardLoading /> <CardLoading />
+            <CardLoading /> <CardLoading /> <CardLoading />
+          </>
         )}
-        {/* <Card /> */}
-        <h1>{Object.values(dataMarvel)[3].findTotal}</h1>
-        <button
-          onClick={() => {
-            dispatch(allActions.characterActions.setFindTotal());
-          }}
-        >
-          Click
-        </button>
+        {data?.error && <h1>Error ...</h1>}
+        {data?.data &&
+          data.data.map(dataMap => {
+            return <Card data={dataMap} key={dataMap.id} />;
+          })}
       </Container>
       <Footer />
     </>

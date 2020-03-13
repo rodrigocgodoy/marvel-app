@@ -1,45 +1,17 @@
-import api from '../../services/api';
-
-const getApiMarvel = () => {
-  // const teste = api.characters
-  //   .findAll(state.dataOpitions.findTotal, state.dataOpitions.offset)
-  //   .then(res => {
-  //     state.isLoading = true;
-  //     data = res.data;
-  //     state.isLoading = false;
-  //   })
-  //   .fail(err => {
-  //     state.isLoading = true;
-  //     state.isError = err;
-  //     state.isLoading = false;
-  //   });
+const requestGetMarvel = () => {
   return {
-    type: 'GET_API_MARVEL'
-    // payload: teste
+    type: 'REQUEST_GET_MARVEL'
   };
 };
 
-const setFindTotal = () => {
+const requestSearchMarvel = name => {
   return {
-    type: 'SET_FIND_TOTAL'
-  };
-};
-
-const getData = () => {
-  return {
-    type: 'GET_DATA'
-  };
-};
-
-const decrementDez = () => {
-  return {
-    type: 'DECREMENT_DEZ'
+    type: 'REQUEST_SEARCH_MARVEL',
+    payload: { name }
   };
 };
 
 export default {
-  getApiMarvel,
-  setFindTotal,
-  getData,
-  decrementDez
+  requestGetMarvel,
+  requestSearchMarvel
 };

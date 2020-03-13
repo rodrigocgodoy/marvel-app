@@ -1,7 +1,9 @@
 import characterActions from './characterActions';
+import globalActions from './globalActions';
 
 const allActions = {
-  characterActions
+  characterActions,
+  globalActions
 };
 
 export default allActions;
