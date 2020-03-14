@@ -8,7 +8,7 @@ function apiGet() {
       ts: 1,
       apikey: 'bcd0d1ec98bea664b61eb20f626c3d6d',
       hash: '99ad9749732783208ca457dd8b2a8065',
-      limit: 100,
+      limit: 20,
       offset: 0
     }
   });
@@ -22,7 +22,7 @@ function apiSearch(name) {
         ts: 1,
         apikey: 'bcd0d1ec98bea664b61eb20f626c3d6d',
         hash: '99ad9749732783208ca457dd8b2a8065',
-        limit: 100,
+        limit: 20,
         offset: 0,
         nameStartsWith: name
       }

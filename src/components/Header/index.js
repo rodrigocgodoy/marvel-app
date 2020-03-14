@@ -19,12 +19,12 @@ export default function Header({ showSearch }) {
 
   useEffect(() => {
     const getDataMarvel = () => {
-      search === ''
-        ? dispatch(allActions.characterActions.requestGetMarvel())
-        : dispatch(allActions.characterActions.requestSearchMarvel(search));
+      showSearch &&
+        (search === ''
+          ? dispatch(allActions.characterActions.requestGetMarvel())
+          : dispatch(allActions.characterActions.requestSearchMarvel(search)));
     };
     getDataMarvel();
-    console.log(search);
   }, [search]);
 
   return (

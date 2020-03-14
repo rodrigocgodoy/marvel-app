@@ -25,8 +25,6 @@ const character = async (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
-        dataUser: [],
-        dataSeries: [],
         loading: false,
         error: true
       };
@@ -44,8 +42,6 @@ const character = async (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
-        dataUser: [],
-        dataSeries: [],
         loading: false,
         error: true
       };
@@ -62,8 +58,6 @@ const character = async (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: [],
-        dataUser: [],
-        dataSeries: [],
         loading: false,
         error: true
       };
