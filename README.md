@@ -12,9 +12,13 @@
 2. Criar uma pasta para clonar o projeto e entrar na pasta criada.
 3. Precisa clonar o repositório do Github:
    - usando HTTPS:
-     `sh git clone https://github.com/rodrigocgodoy/marvel-desafio.git`
+   ```sh
+   git clone https://github.com/rodrigocgodoy/marvel-desafio.git
+   ```
    - usando SSH:
-     `sh git clone git@github.com:rodrigocgodoy/marvel-desafio.git`
+   ```sh
+   git clone git@github.com:rodrigocgodoy/marvel-desafio.git
+   ```
 4. Instalar o Package do projeto:
    ```sh
    npm install
