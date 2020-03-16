@@ -1,5 +1,3 @@
-# Welcome to StackEdit!
-
 <p align="center">
 	<img src="./src/assets/logo.png" height="70" width="175" alt="Marvel App" />
 </p>
