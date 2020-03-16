@@ -39,12 +39,12 @@ export default function Main() {
           </>
         )}
         {data?.error && <h1>Error ...</h1>}
-        {data?.data?.length === 0 ? (
+        {data?.data?.length !== 0 ? (
           data?.data?.map(dataMap => {
             return <Card data={dataMap} key={dataMap.id} />;
           })
         ) : (
-          <NotEmpty />
+          <NotEmpty text="Personagem não encontrado!!" />
         )}
       </Container>
       <Footer />

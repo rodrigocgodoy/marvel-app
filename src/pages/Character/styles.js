@@ -68,7 +68,7 @@ export const Container = styled.div`
           font-size: 12px;
         }
         .title-name {
-          font-size: 25px;
+          font-size: 30px;
         }
       }
     }
