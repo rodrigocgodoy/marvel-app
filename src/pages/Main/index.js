@@ -5,6 +5,7 @@ import Card from '../../components/Card';
 import CardLoading from '../../components/CardLoading';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import NotEmpty from '../../components/NotEmpty';
 import allActions from '../../store/actions';
 import { Container } from './styles';
 
@@ -38,10 +39,13 @@ export default function Main() {
           </>
         )}
         {data?.error && <h1>Error ...</h1>}
-        {data?.data &&
-          data.data.map(dataMap => {
+        {data?.data?.length === 0 ? (
+          data?.data?.map(dataMap => {
             return <Card data={dataMap} key={dataMap.id} />;
-          })}
+          })
+        ) : (
+          <NotEmpty />
+        )}
       </Container>
       <Footer />
     </>

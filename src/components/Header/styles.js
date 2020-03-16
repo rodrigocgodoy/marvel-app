@@ -21,50 +21,44 @@ export const Container = styled.div`
     height: 100%;
   }
 
-  .containerSeacrhClosed {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 50%;
-    width: 300px;
+  svg {
+    flex: 0.5;
+    color: #000;
+    cursor: pointer;
+    height: 15px;
+    margin: 0 5px;
+    padding: 0;
 
-    input {
-      visibility: hidden;
+    path {
+      margin: 0;
+      padding: 0;
     }
   }
 
-  .containerSeacrhOn {
+  .containerSearch {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 50%;
-    width: 300px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 3px;
+
+    * {
+      background: transparent;
+      border: none;
+    }
 
     input {
-      flex: 1;
-      padding: 0 30px 0 10px;
+      flex: 3;
+      padding: 0 0 0 10px;
       border: none;
       border-radius: 5px;
       height: 100%;
       font-size: 15px;
-    }
-  }
-
-  svg {
-    flex: 0.5;
-    color: #fff;
-    cursor: pointer;
-    height: 25px;
-    /* font-size: 20px; */
-    margin: 0;
-    padding: 0;
-
-    path {
-      /* font-size: 20px; */
-      margin: 0;
-      padding: 0;
+      background: #fff;
     }
   }
 `;
