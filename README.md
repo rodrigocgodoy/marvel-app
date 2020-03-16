@@ -1,7 +1,7 @@
 # Welcome to StackEdit!
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/rodrigocgodoy/marvel-	desafio/master/src/assets/logo.png" height="70" width="175" alt="Marvel App" />
+	<img src="./src/assets/logo.png" height="70" width="175" alt="Marvel App" />
 </p>
 
 <h3 align="center">
